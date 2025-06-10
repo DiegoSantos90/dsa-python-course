@@ -20,9 +20,61 @@ The number of nodes in the list is the range [0, 5000].
 
 Follow up: A linked list can be reversed either iteratively or recursively. Could you implement both?
 '''
+from typing import Optional
+
+# Definition for singly-linked list (assuming it's already defined)
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+# Helper function to print a list (assuming it's already defined)
+def print_list(node: Optional[ListNode], name: str):
+    """Helper function to print a linked list in a readable format."""
+    print(f"{name}: ", end="")
+    if not node:
+        print("NULL")
+        return
+
+    result = []
+    while node:
+        result.append(str(node.val))
+        node = node.next
+    print(" -> ".join(result) + " -> NULL")
+
+
+class Solution:
+    def reverseListIteractive(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev, curr = None, head # Crio 2 ponteiros
+        while curr:
+            temp = curr.next    # temp guarda o next do nó corrente.
+            curr.next = prev    # next do nó corrente recebe prev.
+            prev = curr         # prev recebe o nó corrente.
+            curr = temp         # nó corrente passa a ser o próximo nó a ser iterado.
+        return prev
+
+    def reverseListRecursive(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head or not head.next: # Base case head == None ou head.next == None
+            return head
+
+        new_head = self.reverseListRecursive(head.next) # Chama recursivamente utilizando o próximo nó
+        head.next.next = head
+        head.next = None
+
+        return new_head
 
 if __name__ == "__main__":
-    print(reverseList())
-    print(reverseList())
-    print(reverseList())
-    print(reverseList())
+    # Create the linked list: 1 -> 2 -> 3 -> 4 -> 5
+    list_to_reverse_recursive = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+    list_to_reverse_iteractive = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+
+    solution = Solution()
+
+    print("--- Starting Recursive Reversal ---\n")
+    reversed_head = solution.reverseListRecursive(list_to_reverse_recursive)
+    reversed_head_iteractive = solution.reverseListIteractive(list_to_reverse_iteractive)
+
+    print("\n--- Reversal Complete ---")
+    print_list(reversed_head, "Final List")
+    print_list(reversed_head_iteractive, "Final List")
+
