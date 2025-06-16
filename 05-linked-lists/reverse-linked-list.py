@@ -44,7 +44,8 @@ def print_list(node: Optional[ListNode], name: str):
 
 
 class Solution:
-    def reverseListIteractive(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    # Create the linked list: 1 -> 2 -> 3
+    def reverseListIterative(self, head: Optional[ListNode]) -> Optional[ListNode]:
         prev, curr = None, head # Crio 2 ponteiros
         while curr:
             temp = curr.next    # temp guarda o next do nó corrente.
@@ -53,28 +54,29 @@ class Solution:
             curr = temp         # nó corrente passa a ser o próximo nó a ser iterado.
         return prev
 
+    # Create the linked list: 1 -> 2 -> 3
     def reverseListRecursive(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head or not head.next: # Base case head == None ou head.next == None
             return head
 
-        new_head = self.reverseListRecursive(head.next) # Chama recursivamente utilizando o próximo nó
+        new_head = self.reverseListRecursive(head.next) # Chama recursion utilization o próximo nó
         head.next.next = head
         head.next = None
 
         return new_head
 
 if __name__ == "__main__":
-    # Create the linked list: 1 -> 2 -> 3 -> 4 -> 5
-    list_to_reverse_recursive = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
-    list_to_reverse_iteractive = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+        # Create the linked list: 1 -> 2 -> 3
+    list_to_reverse_recursive = ListNode(1, ListNode(2, ListNode(3,)))
+    list_to_reverse_iterative = ListNode(1, ListNode(2, ListNode(3, )))
 
     solution = Solution()
 
     print("--- Starting Recursive Reversal ---\n")
     reversed_head = solution.reverseListRecursive(list_to_reverse_recursive)
-    reversed_head_iteractive = solution.reverseListIteractive(list_to_reverse_iteractive)
+    reversed_head_iterative = solution.reverseListIterative(list_to_reverse_iterative)
 
     print("\n--- Reversal Complete ---")
     print_list(reversed_head, "Final List")
-    print_list(reversed_head_iteractive, "Final List")
+    print_list(reversed_head_iterative, "Final List")
 
