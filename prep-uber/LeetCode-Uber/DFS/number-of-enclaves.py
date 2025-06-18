@@ -25,6 +25,7 @@ grid[i][j] is either 0 or 1.
 '''
 from typing import List
 
+
 class Solution:
     def numEnclaves(self, grid: List[List[int]]) -> int:
         ROWS, COLS = len(grid), len(grid[0])

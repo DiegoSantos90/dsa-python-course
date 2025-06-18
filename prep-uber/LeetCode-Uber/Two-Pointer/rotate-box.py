@@ -80,6 +80,7 @@ class Solution:
         for r in range(ROWS):
             i = COLS - 1
             for c in reversed(range(COLS)):
+            #for c in range(COLS - 1, -1, -1):
                 if boxGrid[r][c] == "#":
                     boxGrid[r][c], boxGrid[r][i] = boxGrid[r][i], boxGrid[r][c]
                     i -= 1
@@ -111,11 +112,19 @@ class Solution:
         print("-" * (len(matrix[0]) * 2 + 3))
 
 if __name__ == "__main__":
-    boxGrid = [["#",".","*","."],["#","#","*","."]]
     solution = Solution()
-    
-    solution.print_box(boxGrid, "Original Box:")
-    
-    result = solution.rotateTheBox(boxGrid)
-    
+
+    boxGridTest1 = [["#",".","*","."],["#","#","*","."]]
+    solution.print_box(boxGridTest1, "Original Box:")
+    result = solution.rotateTheBox(boxGridTest1)
+    solution.print_box(result, "Rotated Box:")
+
+    boxGridTest2 = [["#", ".", "#"]]
+    solution.print_box(boxGridTest2, "Original Box:")
+    result = solution.rotateTheBox(boxGridTest2)
+    solution.print_box(result, "Rotated Box:")
+
+    boxGridTest3 = [["#",".","*","."],["#","#","*","."]]
+    solution.print_box(boxGridTest3, "Original Box:")
+    result = solution.rotateTheBox(boxGridTest3)
     solution.print_box(result, "Rotated Box:")
