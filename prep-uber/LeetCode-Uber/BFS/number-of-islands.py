@@ -28,6 +28,9 @@ m == grid.length
 n == grid[i].length
 1 <= m, n <= 300
 grid[i][j] is '0' or '1'.
+
+Time Complexity: O(m * n)  # Each cell is visited once
+Space Complexity: O(m * n)  # Space for the visited set and queue
 '''
 from collections import deque
 from typing import List

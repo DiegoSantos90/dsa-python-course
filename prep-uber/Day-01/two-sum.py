@@ -25,6 +25,9 @@ Constraints:
 Only one valid answer exists.
 
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
+
+Time Complexity: O(n)  # Single pass through the list
+Space Complexity: O(n)  # Storage for seen numbers
 '''
 from typing import List
 

@@ -22,6 +22,9 @@ m == grid.length
 n == grid[i].length
 1 <= m, n <= 500
 grid[i][j] is either 0 or 1.
+
+Time Complexity: O(m * n)  # Each cell is visited once
+Space Complexity: O(m * n)  # Space for the visited set
 '''
 from typing import List
 

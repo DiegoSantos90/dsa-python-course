@@ -44,6 +44,9 @@ Constraints:
 1 <= w.length <= 104
 1 <= w[i] <= 105
 pickIndex will be called at most 104 times.
+
+Time Complexity: O(log n) for pickIndex due to binary search on prefix sums.
+Space Complexity: O(n) for storing prefix sums.
 '''
 import random
 from typing import List

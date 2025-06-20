@@ -28,6 +28,9 @@ n == isConnected[i].length
 isConnected[i][j] is 1 or 0.
 isConnected[i][i] == 1
 isConnected[i][j] == isConnected[j][i]
+
+Time Complexity: O(n^2)  # Each cell in the matrix is visited once
+Space Complexity: O(n)  # Space for the visited set and recursion stack
 '''
 from collections import defaultdict
 from typing import List

@@ -20,6 +20,9 @@ Constraints:
 1 <= nums.length <= 6
 -10 <= nums[i] <= 10
 All the integers of nums are unique.
+
+Time Complexity: O(n!)  # Factorial time complexity due to generating all permutations
+Space Complexity: O(n)  # Space for the recursion stack and result storage
 '''
 from typing import List
 

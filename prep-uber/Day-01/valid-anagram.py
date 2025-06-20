@@ -16,6 +16,9 @@ s and t consist of lowercase English letters.
 
 Follow up: What if the inputs contain Unicode characters?
 How would you adapt your solution to such a case?
+
+Time Complexity: O(n)  # Single pass through both strings
+Space Complexity: O(1)  # Constant space for character counts (assuming a fixed alphabet size)
 '''
 from collections import Counter
 

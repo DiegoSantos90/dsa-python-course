@@ -22,7 +22,7 @@ Follow up: Can you solve the problem in O(1) extra space complexity?
 (The output array does not count as extra space for space complexity analysis.)
 
 Time Complexity: O(n)  # Single pass for prefix and postfix products
-Space Complexity: O(1)  # Output array does not count as extra space
+Space Complexity: O(1)  # Output array does not count towards space complexity
 '''
 from typing import List
 

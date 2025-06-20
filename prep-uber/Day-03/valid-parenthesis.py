@@ -27,6 +27,9 @@ Output: true
 Constraints:
 1 <= s.length <= 104
 s consists of parentheses only '()[]{}'.
+
+Time Complexity: O(n)  # Single pass through the string
+Space Complexity: O(n)  # Stack for open brackets
 '''
 class Solution:
     def isValid(self, s: str) -> bool:

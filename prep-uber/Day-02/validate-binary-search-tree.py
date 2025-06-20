@@ -20,6 +20,9 @@ Explanation: The root node's value is 5 but its right child's value is 4.
 Constraints:
 The number of nodes in the tree is in the range [1, 104].
 -231 <= Node.val <= 231 - 1
+
+Time Complexity: O(n)  # Single pass through all nodes
+Space Complexity: O(h)  # Space for recursion stack, where h is the height of the tree
 '''
 from typing import Optional
 

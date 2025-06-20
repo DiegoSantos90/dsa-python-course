@@ -16,6 +16,9 @@ Constraints:
 1 <= nums.length <= 10
 -10 <= nums[i] <= 10
 All the numbers of nums are unique.
+
+Time Complexity: O(2^n)  # Each element can either be included or not, leading to 2^n subsets
+Space Complexity: O(n)  # Space for the recursion stack and result storage
 '''
 from typing import List
 

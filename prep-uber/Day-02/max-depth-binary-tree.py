@@ -17,6 +17,9 @@ Output: 2
 Constraints:
 The number of nodes in the tree is in the range [0, 104].
 -100 <= Node.val <= 100
+
+Time Complexity: O(n)  # Single pass through all nodes
+Space Complexity: O(h)  # Space for recursion stack, where h is the height of the tree
 '''
 from typing import Optional
 

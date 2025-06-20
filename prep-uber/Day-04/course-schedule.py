@@ -26,6 +26,9 @@ Constraints:
 prerequisites[i].length == 2
 0 <= ai, bi < numCourses
 All the pairs prerequisites[i] are unique.
+
+Time Complexity: O(V + E)  # V = number of vertices (courses), E = number of edges (prerequisites)
+Space Complexity: O(V + E)  # Space for the adjacency list and the recursion stack
 '''
 from typing import List
 

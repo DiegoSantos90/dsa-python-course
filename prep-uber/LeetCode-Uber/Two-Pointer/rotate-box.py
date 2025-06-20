@@ -69,6 +69,9 @@ Basically we need to transform a line into column considering the following
 Input = [['#', '.'], ['.', '#']]
 Output = [['.', '.'
           ['#'] '#']
+
+Time Complexity: O(m * n)  # Each cell in the matrix is visited once
+Space Complexity: O(1)  # No additional space used for the output, we modify the input in place
 '''
 from typing import List
 

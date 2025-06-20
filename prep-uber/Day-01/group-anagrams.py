@@ -27,6 +27,9 @@ strs[i] consists of lowercase English letters.
 from collections import defaultdict
 from typing import List
 
+#Time Complexity: O(N * K)  # N = length of strs, K = max length of string
+#Space Complexity: O(N * K) # Storage needed for all strings in groups
+
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 
